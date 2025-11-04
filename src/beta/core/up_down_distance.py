@@ -2,7 +2,7 @@
 import os,sys
 import math
 import re, subprocess
-# from optparse import OptionParser  # Deprecated, use argparse
+from optparse import OptionParser
 
 CHROM_CONVERT = {'chrI':'chr1','chrII':'chr2','chrIII':'chr3','chrIV':'chr4','chrV':'chr5','chrVI':'chr6',
                  'chrVII':'chr7','chrVIII':'chr8','chrIX':'chr9','chrX':'chr10','chrXI':'chr11','chrXII':'chr12',
@@ -282,7 +282,7 @@ def main():
         options.gset = [options.gset]
     if options.label:
         if len(options.label) != len(options.gset):
-            error("The number of the gene set labels (-l or --lab) must be the same as that of the gene sets (-g or --gset).")
+            print("Error: The number of the gene set labels (-l or --lab) must be the same as that of the gene sets (-g or --gset).", file=sys.stderr)
             sys.exit(1)
     else:
         options.label =  ["gene set" + str(x) for x in range(1, len(options.gset)+1)]
