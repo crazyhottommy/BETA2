@@ -1,7 +1,9 @@
 # BETA2: Binding and Expression Target Analysis
 
+[![PyPI version](https://img.shields.io/pypi/v/beta-binding-analysis.svg)](https://pypi.org/project/beta-binding-analysis/)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Artistic%202.0-green)](LICENSE)
+[![PyPI downloads](https://img.shields.io/pypi/dm/beta-binding-analysis.svg)](https://pypi.org/project/beta-binding-analysis/)
 
 BETA is a computational tool for integrative analysis of ChIP-seq and RNA-seq/microarray data to predict transcription factor (TF) direct target genes and identify whether the TF primarily functions as a transcriptional activator or repressor.
 
@@ -36,18 +38,18 @@ BETA integrates ChIP-seq binding data with differential gene expression data to:
 - Python 3.8 or higher
 - C compiler (gcc) for motif scanning module
 
-### From Source
-
-```bash
-git clone https://github.com/yourusername/BETA2.git
-cd BETA2
-pip install -e .
-```
-
-### Using pip (when available)
+### From PyPI (Recommended)
 
 ```bash
 pip install beta-binding-analysis
+```
+
+### From Source
+
+```bash
+git clone https://github.com/crazyhottommy/BETA2.git
+cd BETA2
+pip install -e .
 ```
 
 ## Quick Start
@@ -290,7 +292,8 @@ BETA is distributed under the Artistic License 2.0.
 ## Support
 
 - **Documentation**: http://cistrome.org/BETA/tutorial.html
-- **Issues**: https://github.com/yourusername/BETA2/issues
+- **PyPI Package**: https://pypi.org/project/beta-binding-analysis/
+- **Issues**: https://github.com/crazyhottommy/BETA2/issues
 - **Original paper**: https://doi.org/10.1038/nprot.2013.150
 
 ## Authors
