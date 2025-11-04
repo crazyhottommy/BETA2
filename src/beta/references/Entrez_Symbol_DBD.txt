@@ -1,0 +1,542 @@
+11622	ahr	Helix-Loop-Helix Family
+11634	AIRE	Sand Domain Family
+11819	NR2F2	Hormone-nuclear Receptor Family
+11835	Ar	Hormone-nuclear Receptor Family
+11859	PHOX2A	Homeodomain Family
+11863	ARNT	Helix-Loop-Helix Family
+11864	ARNT2	Helix-Loop-Helix Family
+11865	arntl	Helix-Loop-Helix Family
+11878	ARX	Homeodomain Family
+11909	Atf2	Leucine Zipper Family
+11910	atf3	Leucine Zipper Family
+11911	ATF4	Leucine Zipper Family
+11921	ATOH1	Helix-Loop-Helix Family
+11922	NEUROD6	Helix-Loop-Helix Family
+11925	NEUROG3	Helix-Loop-Helix Family
+12013	Bach1	Leucine Zipper Family
+12014	Bach2	Leucine Zipper Family
+12020	nkx3-2	Homeodomain Family
+12022	barx1	Homeodomain Family
+12023	BARX2	Homeodomain Family
+12053	BCL6	BetaBetaAlpha-zinc finger Family
+12142	PRDM1	BetaBetaAlpha-zinc finger Family
+12224	Klf5	BetaBetaAlpha-zinc finger Family
+12355	NR1I3	Hormone-nuclear Receptor Family
+12393	Runx2	Runt Domain Family
+12394	Runx1	Runt Domain Family
+12399	runx3	Runt Domain Family
+12590	CDX1	Homeodomain Family
+12591	CDX2	Homeodomain Family
+12606	CEBPA	Leucine Zipper Family
+12608	CEBPB	Leucine Zipper Family
+12609	cebpd	Leucine Zipper Family
+12611	CEBPG	Leucine Zipper Family
+12677	Vsx2	Homeodomain Family
+12753	CLOCK	Helix-Loop-Helix Family
+12912	CREB1	Leucine Zipper Family
+12913	creb3	Leucine Zipper Family
+12916	Crem	Leucine Zipper Family
+12951	CRX	Homeodomain Family
+13018	CTCF	BetaBetaAlpha-zinc finger Family
+13047	CUX1	Homeodomain Family
+13048	CUX2	Homeodomain Family
+13170	dbp	Leucine Zipper Family
+13198	DDIT3	Leucine Zipper Family
+13345	TWIST2	Helix-Loop-Helix Family
+13392	Dlx2	Homeodomain Family
+13393	DLX3	Homeodomain Family
+13394	Dlx4	Homeodomain Family
+13395	DLX5	Homeodomain Family
+13396	DLX6	Homeodomain Family
+13496	arid3a	Arid Domain Family
+13555	E2F1	Transcription Factor Family
+13557	E2F3	Transcription Factor Family
+13559	E2f5	Transcription Factor Family
+13591	EBF1	Helix-Loop-Helix Family
+13653	Egr1	BetaBetaAlpha-zinc finger Family
+13654	Egr2	BetaBetaAlpha-zinc finger Family
+13655	EGR3	BetaBetaAlpha-zinc finger Family
+13656	Egr4	BetaBetaAlpha-zinc finger Family
+13661	Ehf	Ets Domain Family
+13709	ELF1	Ets Domain Family
+13710	elf3	Ets Domain Family
+13711	ELF5	Ets Domain Family
+13712	elk1	Ets Domain Family
+13713	ELK3	Ets Domain Family
+13714	ELK4	Ets Domain Family
+13796	EMX1	Homeodomain Family
+13797	emx2	Homeodomain Family
+13798	EN1	Homeodomain Family
+13799	En2	Homeodomain Family
+13813	EOMES	Transcription Factor T-Domain
+13819	Epas1	Helix-Loop-Helix Family
+13864	NR2F6	Hormone-nuclear Receptor Family
+13865	NR2F1	Hormone-nuclear Receptor Family
+13875	erF	Ets Domain Family
+13982	Esr1	Hormone-nuclear Receptor Family
+13983	ESR2	Hormone-nuclear Receptor Family
+13984	ESX1	Homeodomain Family
+14009	etv1	Ets Domain Family
+14013	MECOM	BetaBetaAlpha-zinc finger Family
+14106	foxh1	Forkhead Domain Family
+14233	FOXI1	Forkhead Domain Family
+14235	FOXM1	Forkhead Domain Family
+14237	FOXD4	Forkhead Domain Family
+14238	FOXF2	Forkhead Domain Family
+14241	FOXL1	Forkhead Domain Family
+14247	fli1	Ets Domain Family
+14281	FOS	Leucine Zipper Family
+14283	FOSL1	Leucine Zipper Family
+14284	Fosl2	Leucine Zipper Family
+14390	gabpa	Ets Domain Family
+14460	gata1	GATA Domain Family
+14461	GATA2	GATA Domain Family
+14462	GATA3	GATA Domain Family
+14463	GATA4	GATA Domain Family
+14464	gatA5	GATA Domain Family
+14472	GBX2	Homeodomain Family
+14531	Gcm1	Glial Cells Missing (GCM) Domain Family
+14536	Nr6a1	Hormone-nuclear Receptor Family
+14581	GFI1	BetaBetaAlpha-zinc finger Family
+14632	GLI1	BetaBetaAlpha-zinc finger Family
+14633	GLI2	BetaBetaAlpha-zinc finger Family
+14634	Gli3	BetaBetaAlpha-zinc finger Family
+14815	NR3C1	Hormone-nuclear Receptor Family
+14836	Gsc	Homeodomain Family
+14842	gsx1	Homeodomain Family
+14843	GSX2	Homeodomain Family
+14886	gtf2i	GTF2I Domain Family
+14912	Nkx6-2	Homeodomain Family
+15110	HAND1	Helix-Loop-Helix Family
+15111	HAND2	Helix-Loop-Helix Family
+15206	HES2	Helix-Loop-Helix Family
+15207	Hes3	Helix-Loop-Helix Family
+15208	hes5	Helix-Loop-Helix Family
+15209	hesx1	Homeodomain Family
+15220	FOXQ1	Forkhead Domain Family
+15221	FOXD3	Forkhead Domain Family
+15227	Foxf1a	Forkhead Domain Family
+15228	foxg1	Forkhead Domain Family
+15229	foxd1	Forkhead Domain Family
+15248	HIC1	BetaBetaAlpha-zinc finger Family
+15251	HIF1A	Helix-Loop-Helix Family
+15273	hivep2	BetaBetaAlpha-zinc finger Family
+15361	HMGA1	AT-hook Domain Family
+15370	NR4A1	Hormone-nuclear Receptor Family
+15372	HMX2	Homeodomain Family
+15375	foxa1	Forkhead Domain Family
+15376	FOXA2	Forkhead Domain Family
+15378	Hnf4a	Hormone-nuclear Receptor Family
+15379	ONECUT1	Homeodomain Family
+15394	hoxa1	Homeodomain Family
+15395	HOXA10	Homeodomain Family
+15396	HOXA11	Homeodomain Family
+15399	hoxa2	Homeodomain Family
+15400	HOXA3	Homeodomain Family
+15402	HOXA5	Homeodomain Family
+15404	HOXA7	Homeodomain Family
+15405	HOXA9	Homeodomain Family
+15407	HOXB1	Homeodomain Family
+15410	HOXB3	Homeodomain Family
+15412	HOXB4	Homeodomain Family
+15413	hoxb5	Homeodomain Family
+15415	HOXB7	Homeodomain Family
+15416	HOXB8	Homeodomain Family
+15417	HOXB9	Homeodomain Family
+15423	HOXC4	Homeodomain Family
+15425	Hoxc6	Homeodomain Family
+15429	HOXD1	Homeodomain Family
+15430	HOXD10	Homeodomain Family
+15433	HOXD13	Homeodomain Family
+15434	hoxd3	Homeodomain Family
+15436	HOXD4	Homeodomain Family
+15437	HOXD8	Homeodomain Family
+15438	HOXD9	Homeodomain Family
+15499	hsf1	Transcription Factor Family
+15900	IRF8	Interferon Regulatory Factor
+16362	Irf1	Interferon Regulatory Factor
+16363	irf2	Interferon Regulatory Factor
+16391	IRF9	Interferon Regulatory Factor
+16392	Isl1	Homeodomain Family
+16476	Jun	Leucine Zipper Family
+16477	junb	Leucine Zipper Family
+16478	JUND	Leucine Zipper Family
+16596	Klf1	BetaBetaAlpha-zinc finger Family
+16597	Klf12	BetaBetaAlpha-zinc finger Family
+16600	Klf4	BetaBetaAlpha-zinc finger Family
+16601	KLF9	BetaBetaAlpha-zinc finger Family
+16658	Mafb	Leucine Zipper Family
+16764	AFF3	AF-4 Protein Family
+16814	Lbx1	Homeodomain Family
+16842	Lef1	High Mobility Group (Box) Family
+16869	lhx1	Homeodomain Family
+16870	Lhx2	Homeodomain Family
+16871	lhx3	Homeodomain Family
+16872	LHX4	Homeodomain Family
+16873	Lhx5	Homeodomain Family
+16917	lmx1b	Homeodomain Family
+17119	MXD1	Helix-Loop-Helix Family
+17127	SMAD3	MH1 Domain Family
+17129	Smad5	MH1 Domain Family
+17133	Maff	Leucine Zipper Family
+17134	MAFG	Leucine Zipper Family
+17135	mafk	Leucine Zipper Family
+17172	Ascl1	Helix-Loop-Helix Family
+17187	MAX	Helix-Loop-Helix Family
+17188	MAZ	BetaBetaAlpha-zinc finger Family
+17190	mbd1	"Methyl-CpG-binding domain, MBD Family"
+17191	MBD2	"Methyl-CpG-binding domain, MBD Family"
+17258	MEF2A	MADS Box Family
+17259	MEF2B	MADS Box Family
+17261	MEF2D	MADS Box Family
+17285	meox1	Homeodomain Family
+17286	MEOX2	Homeodomain Family
+17293	mesp2	Helix-Loop-Helix Family
+17300	FOXC1	Forkhead Domain Family
+17301	Foxd2	Forkhead Domain Family
+17342	MITF	Helix-Loop-Helix Family
+17425	Foxk1	Forkhead Domain Family
+17428	mnt	Helix-Loop-Helix Family
+17536	Meis2	Homeodomain Family
+17681	MSC	Helix-Loop-Helix Family
+17701	Msx1	Homeodomain Family
+17702	MSX2	Homeodomain Family
+17764	MTF1	BetaBetaAlpha-zinc finger Family
+17859	MXI1	Helix-Loop-Helix Family
+17863	myb	Myb Domain Family
+17864	mybl1	Myb Domain Family
+17865	MYBL2	Myb Domain Family
+17869	MYC	Helix-Loop-Helix Family
+17877	MYF5	Helix-Loop-Helix Family
+17878	MYF6	Helix-Loop-Helix Family
+17927	MYOD1	Helix-Loop-Helix Family
+17928	MYOG	Helix-Loop-Helix Family
+17932	Myt1	BetaBetaAlpha-zinc finger Family
+17933	MYT1L	BetaBetaAlpha-zinc finger Family
+18012	Neurod5	Helix-Loop-Helix Family
+18012	NEUROD1	Helix-Loop-Helix Family
+18013	NEUROD2	Helix-Loop-Helix Family
+18014	NEUROG1	Rel Homology Region Family
+18018	nfatc1	Rel Homology Region Family
+18019	NFATC2	Rel Homology Region Family
+18021	Nfatc3	Leucine Zipper Family
+18022	nfe2	Leucine Zipper Family
+18023	NFE2L1	Leucine Zipper Family
+18024	nfe2l2	Leucine Zipper Family
+18025	NFE2L3	Leucine Zipper Family
+18027	NFIA	Nuclear Factor I-CCAAT-binding Transcription Factor (NFI-CTF) Family
+18029	NFIC	Nuclear Factor I-CCAAT-binding Transcription Factor (NFI-CTF) Family
+18030	NFIL3	Leucine Zipper Family
+18032	nfix	Nuclear Factor I-CCAAT-binding Transcription Factor (NFI-CTF) Family
+18033	NFKB1	Rel Homology Region Family
+18034	NFKB2	Rel Homology Region Family
+18044	NFYA	NF-Y CCAAT-Binding Protein Family
+18046	nfyc	NF-Y CCAAT-Binding Protein Family
+18071	NHLH1	Helix-Loop-Helix Family
+18072	Nhlh2	Helix-Loop-Helix Family
+18089	NKX2-3	Homeodomain Family
+18091	NKX2-5	Homeodomain Family
+18092	nkx2-6	Homeodomain Family
+18094	Nkx2-9	Homeodomain Family
+18095	NKX3-1	Homeodomain Family
+18096	nkx6-1	Homeodomain Family
+18109	MYCN	Helix-Loop-Helix Family
+18124	nr4a3	Hormone-nuclear Receptor Family
+18142	NPAS1	Helix-Loop-Helix Family
+18143	NPAS2	Helix-Loop-Helix Family
+18171	nr1i2	Hormone-nuclear Receptor Family
+18185	Nrl	Leucine Zipper Family
+18227	NR4A2	Hormone-nuclear Receptor Family
+18424	Otx2	Homeodomain Family
+18426	OVOL1	BetaBetaAlpha-zinc finger Family
+18503	Pax1	Homeodomain Family
+18504	PAX2	Homeodomain Family
+18506	PAX4	Homeodomain Family
+18507	PAX5	Homeodomain Family
+18508	Pax6	Homeodomain Family
+18509	PAX7	Homeodomain Family
+18510	PAX8	Homeodomain Family
+18511	PAX9	Homeodomain Family
+18514	PBX1	Homeodomain Family
+18516	PBX3	Homeodomain Family
+18609	pdx1	Homeodomain Family
+18612	Etv4	Ets Domain Family
+18667	PGR	Hormone-nuclear Receptor Family
+18740	pitX1	Homeodomain Family
+18742	pitx3	Homeodomain Family
+18771	Pknox1	Homeodomain Family
+18935	Phox2b	Homeodomain Family
+18986	pou2f1	Homeodomain Family
+18987	Pou2f2	Homeodomain Family
+18991	POU3F1	Homeodomain Family
+18992	pou3f2	Homeodomain Family
+18994	POU3F4	Homeodomain Family
+18996	POU4F1	Homeodomain Family
+18998	POU4F3	Homeodomain Family
+18999	pou5f1	Homeodomain Family
+19009	POU6F1	Homeodomain Family
+19013	PPARA	Hormone-nuclear Receptor Family
+19015	Ppard	Hormone-nuclear Receptor Family
+19016	PPARG	Hormone-nuclear Receptor Family
+19127	proP1	Homeodomain Family
+19213	PTF1A	Helix-Loop-Helix Family
+19401	rarA	Hormone-nuclear Receptor Family
+19411	rarg	Hormone-nuclear Receptor Family
+19434	RAX	Homeodomain Family
+19664	Rbpj	DNA-binding LAG-1-like Domain Family
+19668	RBPJL	DNA-binding LAG-1-like Domain Family
+19696	rel	Rel Homology Region Family
+19697	relA	Rel Homology Region Family
+19698	relB	Rel Homology Region Family
+19712	REST	BetaBetaAlpha-zinc finger Family
+19724	RFX1	RFX Domain Family
+19725	rfx2	RFX Domain Family
+19883	RORA	Hormone-nuclear Receptor Family
+20181	RXRA	Hormone-nuclear Receptor Family
+20182	Rxrb	Hormone-nuclear Receptor Family
+20186	Nr1h4	Hormone-nuclear Receptor Family
+20204	PRRX2	Homeodomain Family
+20230	Satb1	Homeodomain Family
+20289	SCX	Helix-Loop-Helix Family
+20371	FOXP3	Forkhead Domain Family
+20375	Sfpi1	Ets Domain Family
+20465	SIM2	Helix-Loop-Helix Family
+20471	six1	Homeodomain Family
+20472	Six2	Homeodomain Family
+20473	six3	Homeodomain Family
+20474	Six4	Homeodomain Family
+20583	snai2	BetaBetaAlpha-zinc finger Family
+20613	snai1	BetaBetaAlpha-zinc finger Family
+20664	sox1	High Mobility Group (Box) Family
+20665	SOX10	High Mobility Group (Box) Family
+20666	SOX11	High Mobility Group (Box) Family
+20670	Sox16	High Mobility Group (Box) Family
+20671	Sox17	High Mobility Group (Box) Family
+20672	SOX18	High Mobility Group (Box) Family
+20674	SOX2	High Mobility Group (Box) Family
+20675	Sox3	High Mobility Group (Box) Family
+20677	Sox4	High Mobility Group (Box) Family
+20678	SOX5	High Mobility Group (Box) Family
+20679	Sox6	High Mobility Group (Box) Family
+20680	Sox7	High Mobility Group (Box) Family
+20681	SOX8	High Mobility Group (Box) Family
+20682	SOX9	High Mobility Group (Box) Family
+20683	sp1	BetaBetaAlpha-zinc finger Family
+20687	SP3	BetaBetaAlpha-zinc finger Family
+20688	SP4	BetaBetaAlpha-zinc finger Family
+20728	Spic	Ets Domain Family
+20787	Srebf1	Helix-Loop-Helix Family
+20788	srebf2	Helix-Loop-Helix Family
+20807	Srf	MADS Box Family
+20846	STAT1	Stat Protein Family
+20848	Stat3	Stat Protein Family
+20849	STAT4	Stat Protein Family
+20850	STAT5A	Stat Protein Family
+20851	Stat5b	Stat Protein Family
+20852	STAT6	Stat Protein Family
+20893	bhlhe40	Helix-Loop-Helix Family
+20997	brachyury	Transcription Factor T-Domain
+21349	tal1	Helix-Loop-Helix Family
+21350	Tal2	Helix-Loop-Helix Family
+21375	TBR1	Transcription Factor T-Domain
+21380	Tbx1	Transcription Factor T-Domain
+21385	tbx2	Transcription Factor T-Domain
+21386	tbx3	Transcription Factor T-Domain
+21388	tbx5	Transcription Factor T-Domain
+21389	tbx6	Transcription Factor T-Domain
+21405	HNF1A	Homeodomain Family
+21406	TCF12	Helix-Loop-Helix Family
+21407	TCF15	Helix-Loop-Helix Family
+21408	Zfp354a	BetaBetaAlpha-zinc finger Family
+21410	HNF1B	Homeodomain Family
+21413	TCF4	Helix-Loop-Helix Family
+21414	TCF7	High Mobility Group (Box) Family
+21415	tcf7l1	High Mobility Group (Box) Family
+21416	Tcf7l2	High Mobility Group (Box) Family
+21417	ZEB1	BetaBetaAlpha-zinc finger Family
+21418	Tcfap2a	Helix-Loop-Helix Family
+21419	Tcfap2b	Helix-Loop-Helix Family
+21422	Tcfcp2	CP2 Transcription Factor Domain Family
+21423	tcf3	Helix-Loop-Helix Family
+21426	Tcfec	Helix-Loop-Helix Family
+21428	MLX	Helix-Loop-Helix Family
+21429	UBTF	High Mobility Group (Box) Family
+21674	SRY	High Mobility Group (Box) Family
+21676	TEAD1	Homeodomain Family
+21677	TEAD2	Homeodomain Family
+21678	TEAD3	Homeodomain Family
+21679	tead4	Homeodomain Family
+21685	tef	Leucine Zipper Family
+21780	TFAM	High Mobility Group (Box) Family
+21781	TFDP1	Transcription Factor Family
+21815	Tgif1	Homeodomain Family
+21833	thrA	Hormone-nuclear Receptor Family
+21834	thrB	Hormone-nuclear Receptor Family
+21847	KLF10	BetaBetaAlpha-zinc finger Family
+21869	nkx2-1	Homeodomain Family
+21907	nr2e1	Hormone-nuclear Receptor Family
+21908	tlx1	Homeodomain Family
+21909	TLX2	Homeodomain Family
+22025	nr2c1	Hormone-nuclear Receptor Family
+22026	NR2C2	Hormone-nuclear Receptor Family
+22059	Trp53	Loop-Sheet-Helix Family
+22130	Ttf1	Myb Domain Family
+22160	twist1	Helix-Loop-Helix Family
+22259	NR1H3	Hormone-nuclear Receptor Family
+22260	Nr1h2	Hormone-nuclear Receptor Family
+22278	usf1	Helix-Loop-Helix Family
+22282	USF2	Helix-Loop-Helix Family
+22337	VDR	Hormone-nuclear Receptor Family
+22344	vezf1	BetaBetaAlpha-zinc finger Family
+22431	wt1	BetaBetaAlpha-zinc finger Family
+22433	Xbp1	Leucine Zipper Family
+22632	YY1	BetaBetaAlpha-zinc finger Family
+22634	PLAGL1	BetaBetaAlpha-zinc finger Family
+22642	ZBTB17	BetaBetaAlpha-zinc finger Family
+22661	Zfp148	BetaBetaAlpha-zinc finger Family
+22666	zfp161	BetaBetaAlpha-zinc finger Family
+22685	Zfp239	BetaBetaAlpha-zinc finger Family
+22697	ZSCAN21	BetaBetaAlpha-zinc finger Family
+22718	Zfp60	BetaBetaAlpha-zinc finger Family
+22724	ZBTB7B	BetaBetaAlpha-zinc finger Family
+22751	Zfp90	BetaBetaAlpha-zinc finger Family
+22770	ZHX1	Homeodomain Family
+22771	ZIC1	BetaBetaAlpha-zinc finger Family
+22772	ZIC2	BetaBetaAlpha-zinc finger Family
+22773	ZIC3	BetaBetaAlpha-zinc finger Family
+22774	zic4	BetaBetaAlpha-zinc finger Family
+22778	ikzf1	BetaBetaAlpha-zinc finger Family
+22780	IKZF3	BetaBetaAlpha-zinc finger Family
+23857	Dmtf1	Myb Domain Family
+23871	ETS1	Ets Domain Family
+23872	Ets2	Ets Domain Family
+24135	Zfp68	BetaBetaAlpha-zinc finger Family
+24136	Zeb2	BetaBetaAlpha-zinc finger Family
+26379	esrra	Hormone-nuclear Receptor Family
+26380	esrrb	Hormone-nuclear Receptor Family
+26381	esrrg	Hormone-nuclear Receptor Family
+26386	HSF4	Transcription Factor Family
+26423	nr5a1	Hormone-nuclear Receptor Family
+26424	NR5A2	Hormone-nuclear Receptor Family
+26427	CREB3L1	Leucine Zipper Family
+26910	FIGLA	Helix-Loop-Helix Family
+26927	Foxl2	Forkhead Domain Family
+27049	ETV3	Ets Domain Family
+27056	IRF5	Interferon Regulatory Factor
+27217	MIXL1	Homeodomain Family
+27386	Npas3	Helix-Loop-Helix Family
+30051	SPDEF	Ets Domain Family
+30927	SNAI3	BetaBetaAlpha-zinc finger Family
+50496	e2f6	Transcription Factor Family
+50524	SALL2	BetaBetaAlpha-zinc finger Family
+50794	KLF13	BetaBetaAlpha-zinc finger Family
+50913	Olig2	Helix-Loop-Helix Family
+50914	OLIG1	Helix-Loop-Helix Family
+52679	E2F7	Transcription Factor Family
+53970	RFX5	RFX Domain Family
+54123	IRF7	Interferon Regulatory Factor
+54131	IRF3	Interferon Regulatory Factor
+54446	NFAT5	Rel Homology Region Family
+54601	FOXO4	Forkhead Domain Family
+55994	SMAD9	MH1 Domain Family
+56218	PATZ1	AT-hook Domain Family
+56380	Arid3b	Arid Domain Family
+56458	foxo1	Forkhead Domain Family
+56484	FOXO3	Forkhead Domain Family
+56490	ZBTB20	BetaBetaAlpha-zinc finger Family
+56501	Elf4	Ets Domain Family
+56711	PLAG1	BetaBetaAlpha-zinc finger Family
+56787	ASCL3	Helix-Loop-Helix Family
+56805	ZBTB33	BetaBetaAlpha-zinc finger Family
+56809	GMEB1	Sand Domain Family
+57080	GTF2IRD1	GTF2I Domain Family
+57246	TBX20	Transcription Factor T-Domain
+57765	tbx21	Transcription Factor T-Domain
+58805	Mlxipl	Helix-Loop-Helix Family
+60611	FOXJ2	Forkhead Domain Family
+65020	Zfp110	BetaBetaAlpha-zinc finger Family
+65100	Zic5	BetaBetaAlpha-zinc finger Family
+66277	klf15	BetaBetaAlpha-zinc finger Family
+66596	GTF3A	BetaBetaAlpha-zinc finger Family
+68750	Rreb1	BetaBetaAlpha-zinc finger Family
+68910	Zfp467	BetaBetaAlpha-zinc finger Family
+69257	ELF2	Ets Domain Family
+71093	ATOH8	Helix-Loop-Helix Family
+71137	RFX4	RFX Domain Family
+71371	ARID5B	Arid Domain Family
+71722	Cic	High Mobility Group (Box) Family
+71950	NANOG	Homeodomain Family
+73181	NFATC4	Rel Homology Region Family
+74120	Zfp263	BetaBetaAlpha-zinc finger Family
+74123	foxp4	Forkhead Domain Family
+78284	CREB3L4	Leucine Zipper Family
+79362	BHLHE41	Helix-Loop-Helix Family
+83383	Tcfap4	Helix-Loop-Helix Family
+83925	TRPS1	GATA Domain Family
+83993	Tbx19	Transcription Factor T-Domain
+93691	KLF7	BetaBetaAlpha-zinc finger Family
+93760	ARID1A	Arid Domain Family
+93762	SMARCA5	Slide Domain Family
+94187	Zfp423	BetaBetaAlpha-zinc finger Family
+94222	Olig3	Helix-Loop-Helix Family
+97165	HMGB2	High Mobility Group (Box) Family
+99377	sall4	BetaBetaAlpha-zinc finger Family
+103889	HOXB2	Homeodomain Family
+104156	ETV5	Ets Domain Family
+104360	ISL2	Homeodomain Family
+104394	e2f4	Transcription Factor Family
+107503	ATF5	Leucine Zipper Family
+107586	OVOL2	BetaBetaAlpha-zinc finger Family
+107751	Prrxl1	Homeodomain Family
+107889	GCM2	Glial Cells Missing (GCM) Domain Family
+108655	FOXP1	Forkhead Domain Family
+109663	HOXC11	Homeodomain Family
+109889	mzf1	BetaBetaAlpha-zinc finger Family
+110521	Hivep1	BetaBetaAlpha-zinc finger Family
+110784	NR3C2	Hormone-nuclear Receptor Family
+110794	CEBPE	Leucine Zipper Family
+114142	FOXP2	Forkhead Domain Family
+114889	vsx1	Homeodomain Family
+116870	Mta1	GATA Domain Family
+118445	KLF16	BetaBetaAlpha-zinc finger Family
+140477	DMBX1	Homeodomain Family
+170574	SP7	BetaBetaAlpha-zinc finger Family
+170729	SCRT1	BetaBetaAlpha-zinc finger Family
+195733	GRHL1	CP2 Transcription Factor Domain Family
+207165	BPTF	DNA binding homeobox and Different Transcription Factors (DDT) Domain Family
+208677	CREB3L3	Leucine Zipper Family
+209446	Tcfe3	Helix-Loop-Helix Family
+209448	HOXC10	Homeodomain Family
+212391	Lcor	Homeodomain Family
+212712	SATB2	Homeodomain Family
+214162	Mll1	AT-hook Domain Family
+216285	alx1	Homeodomain Family
+217082	HLF	Leucine Zipper Family
+217166	Nr1d1	Hormone-nuclear Receptor Family
+218772	Rarb	Hormone-nuclear Receptor Family
+223227	Sox21	High Mobility Group (Box) Family
+223922	Atf7	Leucine Zipper Family
+225631	ONECUT2	Homeodomain Family
+225872	npas4	Helix-Loop-Helix Family
+225998	RORB	Hormone-nuclear Receptor Family
+226641	Atf6	Leucine Zipper Family
+227644	SNAPC4	Myb Domain Family
+229004	GMEB2	Sand Domain Family
+230824	GRHL3	CP2 Transcription Factor Domain Family
+231329	POLR2B	DNA Polymerase-Beta Family
+234219	HELT	Helix-Loop-Helix Family
+235320	ZBTB16	BetaBetaAlpha-zinc finger Family
+237336	TBPL1	TATA box-binding Family
+239985	ARID1B	Arid Domain Family
+242705	E2f2	Transcription Factor Family
+244219	Zfp668	BetaBetaAlpha-zinc finger Family
+246086	Onecut3	Homeodomain Family
+260298	Fev	Ets Domain Family
+268417	Zkscan17	BetaBetaAlpha-zinc finger Family
+272382	Spib	Ets Domain Family
+329934	Foxo6	Forkhead Domain Family
+332937	Tcfap2e	Helix-Loop-Helix Family
+353187	NR1D2	Hormone-nuclear Receptor Family
+378435	mafA	Leucine Zipper Family
+381463	nr1h5	Hormone-nuclear Receptor Family
+387609	ZHX2	Homeodomain Family

@@ -1,0 +1,11 @@
+# Core dependencies
+numpy>=1.20.0
+scipy>=1.7.0
+matplotlib>=3.3.0
+
+# Optional dependencies for development
+pytest>=7.0
+pytest-cov>=3.0
+black>=22.0
+flake8>=4.0
+mypy>=0.990

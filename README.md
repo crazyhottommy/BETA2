@@ -1,4 +1,4 @@
-# BETA: Binding and Expression Target Analysis
+# BETA2: Binding and Expression Target Analysis
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Artistic%202.0-green)](LICENSE)
@@ -295,8 +295,8 @@ BETA is distributed under the Artistic License 2.0.
 
 ## Authors
 
-- **Original Author**: Su Wang (wangsu0623@gmail.com)
-- **Python 3 Port**: Tommy Tang
+- **Original Author**: Su Wang (wangsu0623atgmail.com)
+- **Python 3 Port**: Tommy Tang (tangming2005atgmail.com)
 
 ## Changelog
 

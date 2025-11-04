@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <title>BETA Motif Part</title>
+        
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+               
+        <!--[if IE]>
+        
+        <style type="text/css">
+        .clear {
+          zoom: 1;
+          display: block;
+        }
+        </style>
+
+        
+        <![endif]-->
+        
+    </head>
+    
+    <body>
+
+    	<div class="section" id="page"> <!-- Defining the #page section with the section tag -->
+    
+            <div class="header"> <!-- Defining the header section of the page with the appropriate tag -->
+
+                <h1>BETA: Motif Analysis</h1>
+                <h3>Motif Scan on the TF Target Genes</h3>
+                            
+            </div>
+            
+            <div class="section" id="articles"> <!-- A new section with the articles -->
+
+				<!-- Article 1 start -->
+
+                <div class="line"></div>  <!-- Dividing line -->
+                
+                <div class="article" id="article1"> <!-- The new article tag. The id is supplied so it can be scrolled into view. -->
+                    <h2>Part1: Up Target Genes</h2>
+                    
+                    <div class="line"></div>
+                    
+                    <div class="articleBody clear">
+                        <table style="text-align: left; width: 100%" cellpadding="2" cellspacing="2" border="1" style="border: 1px solid #000;" >
+                            {{tabletitleup}}
+                            {{subup}}
+                        </table>
+                    </div>
+                </div>
+                
+				<!-- Article 1 end -->
+				<!-- Article 2 start -->
+
+                <div class="line"></div>
+                
+                <div class="article" id="article2">
+                    <h2>Part2: Down Target Genes</h2>
+                    <div class="line"></div>
+                    <div class="articleBody clear">
+                        <table style="text-align: left; width: 100%" cellpadding="2" cellspacing="2" border="1" style="border: 1px solid #000;" >
+                            {{tabletitledown}}
+                            {{subdown}}
+                        </table>
+                    </div>
+                </div>
+                
+				<!-- Article 2 end -->
+
+				<!-- Article 3 start -->
+
+                <div class="line"></div>
+                
+                <div class="article" id="article3">
+                    <h2>Part3: UP vs DOWN Motif Scan</h2>
+                    
+                    <div class="line"></div>
+                        
+                        <table style="text-align: left; width: 100%" cellpadding="2" cellspacing="2" border="1" style="border: 1px solid #000;" >
+                            {{tabletitlecompare}}
+                            {{subcompare}}
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+				<!-- Article 3 end -->
+
+
+            </div>
+
+        <div class="footer"> <!-- Marking the footer section -->
+
+          <div class="line"></div>
+           
+           <p>BETA: Binding and Expression Target Analysis</p> <!-- Change the copyright notice -->
+           
+           <a href="#" class="up">Go UP</a>
+           
+        </div>
+            
+		</div> <!-- Closing the #page section -->
+        
+        <!-- JavaScript Includes -->
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.scrollTo-1.4.2/jquery.scrollTo-min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
