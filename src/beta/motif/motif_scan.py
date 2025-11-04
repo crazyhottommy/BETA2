@@ -195,14 +195,14 @@ class Motif_Scan:
            improve the efficiency, before run mis, the make command is required'''
         
         Info("run mis to do the known motif scan with cistrome motif database")
-        #misdir = resource_filename('BETA','mis')
+        #misdir = resource_filename('beta','mis')
         #os.chdir(misdir)
         #Usage: ./mis <in.seq> <in.db> <p-value> <motif-id> <output-prefix>
         self.motifscore = []
         
         for seq in self.fastas:
             inseq = os.path.join(self.curdir,seq)
-            db = resource_filename('BETA','references/cistrome.db')
+            db = resource_filename('beta','references/cistrome.db')
             p_value = 0.001
             motif_ID = 'all'
             prefix = seq.replace('.fa','')
@@ -244,7 +244,7 @@ class Motif_Scan:
         middlescores = []
         
         a = MP.MotifParser()
-        motifdb = resource_filename('BETA','references/cistrome.xml')
+        motifdb = resource_filename('beta','references/cistrome.xml')
         a.Parser(motifdb)
         motifinfo = a.motifs
 
@@ -709,8 +709,8 @@ class Motif_Scan:
         outhtml.write(b)
         outhtml.close()
  
-        jsfile = resource_filename('BETA','templates/script.js')
-        cssfile = resource_filename('BETA','templates/styles.css')
+        jsfile = resource_filename('beta','templates/script.js')
+        cssfile = resource_filename('beta','templates/styles.css')
         run_cmd('rm %s'%'NON_MOTIFS.txt')
         run_cmd('cp %s %s'%(jsfileresultdir))
         run_cmd('cp %s %s'%(cssfileresultdir))

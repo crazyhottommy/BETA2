@@ -34,15 +34,15 @@ class expr_combine:
         self.downranks = {}
 
         if options.genome == 'hg18':
-            self.genome = resource_filename('BETA','references/hg18.refseq')
+            self.genome = resource_filename('beta','references/hg18.refseq')
         elif options.genome == 'hg19':
-            self.genome = resource_filename('BETA','references/hg19.refseq')          
+            self.genome = resource_filename('beta','references/hg19.refseq')          
         elif options.genome == 'hg38':
-            self.genome = resource_filename('BETA','references/hg38.refseq')
+            self.genome = resource_filename('beta','references/hg38.refseq')
         elif options.genome == 'mm9':
-            self.genome = resource_filename('BETA','references/mm9.refseq')           
+            self.genome = resource_filename('beta','references/mm9.refseq')           
         elif options.genome == 'mm10':
-            self.genome = resource_filename('BETA','references/mm10.refseq')
+            self.genome = resource_filename('beta','references/mm10.refseq')
         else:
             self.genome = options.reference
 
@@ -91,13 +91,13 @@ class expr_combine:
     def rank_genes(self):
         
         up = self.upgenes
-        up.sort(cmp=lambda x,y:cmp(x[1],y[1]))#upgene are which t score > 0, the smaller the qvaule, the more significant it is
+        up.sort(key=lambda x: x[1])#upgene are which t score > 0, the smaller the qvaule, the more significant it is
         #[gene, qvalue]
         down = self.downgenes
-        down.sort(cmp=lambda x,y:cmp(x[1],y[1]))#downgenes are which t score < 0, the smaller qvaule, the more significant it is
+        down.sort(key=lambda x: x[1])#downgenes are which t score < 0, the smaller qvaule, the more significant it is
     
         nochange = self.nochange
-        nochange.sort(cmp=lambda x,y:cmp(x[1],y[1]), reverse = True)
+        nochange.sort(key=lambda x: x[1], reverse = True)
         
         upout = open('upgene.txt','w')
         downout = open('downgene.txt','w')
@@ -176,18 +176,18 @@ class expr_combine:
                 notdiff.write(nochange[k][0] + '\n')
             with open('upgene.txt') as upgenef:
                 upgenelist = upgenef.readlines()
-                for m in range((notdiffamount-len(nochange))/2):
+                for m in range((notdiffamount-len(nochange))//2):
                     g = upgenelist[-m-1].split('\t')
                     notdiff.write(g[0] + '\n')
             with open('downgene.txt') as downgenef:
                 downgenelist = downgenef.readlines()
-                for m in range((notdiffamount-len(nochange))/2):
+                for m in range((notdiffamount-len(nochange))//2):
                     g = downgenelist[-m-1].split('\t')
                     notdiff.write(g[0] + '\n')
             notdiff.close()
         else:
-            run_cmd("cut -f1 upgene.txt | tail -" + str(newc/2) + " > notdiff1.txt")
-            run_cmd("cut -f1 downgene.txt | tail -" + str(newd/2) + " > notdiff2.txt")
+            run_cmd("cut -f1 upgene.txt | tail -" + str(newc//2) + " > notdiff1.txt")
+            run_cmd("cut -f1 downgene.txt | tail -" + str(newd//2) + " > notdiff2.txt")
             run_cmd("cat notdiff1.txt notdiff2.txt > notdiff.txt")
 
         Info("Prepare file for the Up/Down Test")
@@ -241,8 +241,8 @@ class expr_combine:
             upcounts = 0
             downcounts = 0
             p = 0
-            for list in self.selected:
-                Info('Get the Rank Product of the %s genes'%list)
+            for gene_type in self.selected:
+                Info('Get the Rank Product of the %s genes'%gene_type)
                 if self.gname2 == False:
                     geneID_col = 3
                 else:
@@ -252,7 +252,7 @@ class expr_combine:
                 egenes = []
                 brank = {}
                 erank = {}
-                out = "%s_%s_target.txt"%(self.name,list[1:-1]) # remove the ("")
+                out = "%s_%s_target.txt"%(self.name,gene_type[1:-1]) # remove the ("")
                 prank = {}#peak rank
                 pinf = open(self.name + '.txt') #peak rank's file result from qianzi's method
                 outf = open(out,'w')
@@ -282,15 +282,16 @@ class expr_combine:
                                 prank[line[geneID_col]] = [[line[0], line[1], line[2], line[3], line[4], line[5], line[6], line[7]]]
                 
                 for gene in list(prank.keys()):
-        
-                    info = prank[gene]                       
-                    info.sort(cmp = lambda x,y:cmp(x[-1],y[-1]))                    
+
+                    info = prank[gene]
+                    # Sort with NA values at the end (use float('inf') for NA)
+                    info.sort(key=lambda x: float('inf') if x[-1] == 'NA' else x[-1])
                     prank[gene] = info[0]
                 
-                if list == '"upregulate"':
+                if gene_type == '"upregulate"':
                     keys = list(self.upranks.keys())
                     
-                if list == '"downregulate"':
+                if gene_type == '"downregulate"':
                     keys = list(self.downranks.keys())
                     
                 pkeys = list(prank.keys())
@@ -318,13 +319,13 @@ class expr_combine:
                         rank = rank
                     else:
                         rank = rank + 1
-                    bindingrank[ID] = [refseq,symbolrank]
+                    bindingrank[ID] = [refseq, symbol, rank]
                     maxscore = score
      
                 bkeys = list(bindingrank.keys())
                 for gene in keys:
                     if gene in pkeys:
-                        if list == '"upregulate"':
+                        if gene_type == '"upregulate"':
 
                             if self.upranks[gene][1] != 'NA' and prank[gene][7] != 'NA':
                                 
@@ -338,7 +339,7 @@ class expr_combine:
                             else:
                                 continue
 
-                        if list == '"downregulate"':
+                        if gene_type == '"downregulate"':
                             if self.downranks[gene][1] != 'NA' and prank[gene][7] != 'NA':
                                 
                                 bgenes.append([gene, bindingrank[gene][0], bindingrank[gene][1], bindingrank[gene][2]])

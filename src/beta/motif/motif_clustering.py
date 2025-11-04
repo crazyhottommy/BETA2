@@ -14,7 +14,7 @@ def getImgdir(outdir):
         cmd = 'rm -rf %s'%Imgdir
         run_cmd(cmd)
         
-    Imgdirzip = resource_filename('BETA','templates/motiflogos.zip')
+    Imgdirzip = resource_filename('beta','templates/motiflogos.zip')
     cmd = 'unzip ' + Imgdirzip + ' -d ' + outdir
     run_cmd(cmd)
         

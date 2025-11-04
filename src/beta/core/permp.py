@@ -71,7 +71,7 @@ class permutation:
                 refseq = Infos[3]
                 strand = Infos[5]
                 symbol = Infos[6]
-                outf.write('%s\t%s\t%s\t%s\t%.3e\t%s\t%s\n'%(chrom,tss,ttsrefseq,float(ob_rp),strand,symbol))
+                outf.write('%s\t%s\t%s\t%s\t%.3e\t%s\t%s\n'%(chrom,tss,tts,refseq,float(ob_rp),strand,symbol))
                
             outf.close()
             inf.close()

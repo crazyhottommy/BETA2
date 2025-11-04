@@ -27,11 +27,11 @@ class PScore:
                 self.boundaryfile = ''
             else:
                 if not options.boundaryfile:
-                    self.boundaryfile = resource_filename('BETA', 'references/hg19_CTCF_bound.bed')
+                    self.boundaryfile = resource_filename('beta', 'references/hg19_CTCF_bound.bed')
                 else:
                     self.boundaryfile = options.boundaryfile
             if not options.reference:
-                self.genome = resource_filename('BETA','references/hg19.refseq')
+                self.genome = resource_filename('beta','references/hg19.refseq')
             else:
                 self.genome = options.reference
 
@@ -41,11 +41,11 @@ class PScore:
                 self.boundaryfile = ''
             else:
                 if not options.boundaryfile:
-                    self.boundaryfile = resource_filename('BETA', 'references/mm9_CTCF_bound.bed')
+                    self.boundaryfile = resource_filename('beta', 'references/mm9_CTCF_bound.bed')
                 else:
                     self.boundaryfile = options.boundaryfile
             if not options.reference:
-                self.genome = resource_filename('BETA','references/mm9.refseq')
+                self.genome = resource_filename('beta','references/mm9.refseq')
             else:
                 self.genome = options.reference
                 
@@ -60,7 +60,7 @@ class PScore:
                 else:
                     self.boundaryfile = options.boundaryfile
             if not options.reference:
-                self.genome = resource_filename('BETA','references/hg38.refseq')
+                self.genome = resource_filename('beta','references/hg38.refseq')
             else:
                 self.genome = options.reference
 
@@ -75,7 +75,7 @@ class PScore:
                 else:
                     self.boundaryfile = options.boundaryfile
             if not options.reference:
-                self.genome = resource_filename('BETA','references/mm10.refseq')
+                self.genome = resource_filename('beta','references/mm10.refseq')
             else:
                 self.genome = options.reference
                 
@@ -90,7 +90,7 @@ class PScore:
                 else:
                     self.boundaryfile = options.boundaryfile
             if not options.reference:
-                self.genome = resource_filename('BETA','references/hg18.refseq')
+                self.genome = resource_filename('beta','references/hg18.refseq')
             else:
                 self.genome = options.reference
                 
