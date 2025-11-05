@@ -42,6 +42,8 @@ The rank product identifies genes that score well on BOTH criteria - these are t
 
 **Statistical Testing**: BETA uses the Kolmogorov-Smirnov test to determine if upregulated or downregulated genes have significantly higher regulatory potential scores than non-differentially expressed genes, revealing whether your factor functions as an activator, repressor, or both.
 
+> **For Technical Details**: See [METHODOLOGY.md](METHODOLOGY.md) for a comprehensive step-by-step explanation of all calculations, formulas, and statistical tests with worked examples.
+
 ## Key Features
 
 - **Integrative Analysis**: Combines ChIP-seq peaks with gene expression data
