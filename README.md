@@ -7,20 +7,40 @@
 
 BETA is a computational tool for integrative analysis of ChIP-seq and RNA-seq/microarray data to predict transcription factor (TF) direct target genes and identify whether the TF primarily functions as a transcriptional activator or repressor.
 
-## Overview
+## The Biological Problem
 
-BETA integrates ChIP-seq binding data with differential gene expression data to:
+When you perform ChIP-seq to find where a transcription factor binds and RNA-seq to see which genes change expression, a critical question arises: **Which genes are direct targets of your factor versus indirect/secondary effects?**
 
-1. **Predict direct target genes** by combining:
-   - Regulatory potential scores based on distance to transcription start sites (TSS)
-   - Binding peak signals
-   - Gene expression changes
+Several challenges complicate this analysis:
+- **No 1-to-1 mapping**: A single binding site can regulate multiple genes, and a gene can be regulated by multiple binding sites
+- **Not all binding is functional**: Some ChIP-seq peaks may not actually regulate nearby genes due to lack of cofactors or unfavorable chromatin environment
+- **Secondary effects**: Binding to direct target genes causes them to change expression, which then affects other genes downstream (indirect targets)
 
-2. **Infer TF function** as activator or repressor through:
-   - Regulatory potential analysis
-   - Gene set enrichment analysis
+## What BETA Does
 
-3. **Identify enriched motifs** in target regions (optional)
+BETA addresses these challenges by integrating binding and expression data to answer three key questions:
+
+1. **Is your factor an activator or repressor?**
+   - Determines whether the factor primarily activates or represses gene expression by testing if genes with stronger binding potential are enriched among upregulated or downregulated genes
+
+2. **Which genes are direct targets?**
+   - Identifies genes that are most likely to be directly regulated by combining two lines of evidence: proximity/strength of binding AND expression changes
+   - Genes with both high binding potential and differential expression are prioritized as direct targets
+
+3. **What cofactors modulate the factor's function?** (optional)
+   - Identifies DNA-binding motifs enriched near your factor's binding sites to discover collaborating transcription factors
+
+## How BETA Works
+
+**Regulatory Potential Model**: Instead of simply assigning the nearest gene to each peak, BETA calculates a "regulatory potential score" for each gene based on ALL nearby binding sites within a distance window (default 100kb). Binding sites closer to the transcription start site (TSS) contribute more to the score using an exponentially decaying distance function - this reflects the biological reality that closer regulatory elements generally have stronger effects.
+
+**Rank Product Integration**: BETA ranks genes by two criteria:
+1. Regulatory potential score (how much binding is nearby)
+2. Differential expression significance (how much expression changed)
+
+The rank product identifies genes that score well on BOTH criteria - these are the most confident direct targets. Genes that only show binding OR only show expression changes are deprioritized, reducing false positives from non-functional binding sites and indirect targets.
+
+**Statistical Testing**: BETA uses the Kolmogorov-Smirnov test to determine if upregulated or downregulated genes have significantly higher regulatory potential scores than non-differentially expressed genes, revealing whether your factor functions as an activator, repressor, or both.
 
 ## Key Features
 
