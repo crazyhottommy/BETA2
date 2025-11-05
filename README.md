@@ -1,9 +1,9 @@
 # BETA2: Binding and Expression Target Analysis
 
 [![PyPI version](https://img.shields.io/pypi/v/beta-binding-analysis.svg)](https://pypi.org/project/beta-binding-analysis/)
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
+[![Python Version](https://img.shields.io/pypi/pyversions/beta-binding-analysis.svg)](https://pypi.org/project/beta-binding-analysis/)
 [![License](https://img.shields.io/badge/license-Artistic%202.0-green)](LICENSE)
-[![PyPI downloads](https://img.shields.io/pypi/dm/beta-binding-analysis.svg)](https://pypi.org/project/beta-binding-analysis/)
+[![PyPI downloads](https://static.pepy.tech/badge/beta-binding-analysis)](https://pepy.tech/project/beta-binding-analysis)
 
 BETA is a computational tool for integrative analysis of ChIP-seq and RNA-seq/microarray data to predict transcription factor (TF) direct target genes and identify whether the TF primarily functions as a transcriptional activator or repressor.
 
@@ -102,7 +102,7 @@ beta minus \
 BED format file (3 or 5 columns):
 ```
 chr1    1000    2000
-chr1    5000    6000    peak1    100
+chr1    5000    6000
 ```
 
 ### Differential Expression (required for basic/plus modes)
