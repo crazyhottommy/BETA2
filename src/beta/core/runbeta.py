@@ -12,9 +12,9 @@ BETA-Binding and Expression Targets Analysis: Use the ChIP-x data and Microarray
 
 Part1:
 use binding data to calc the score of each gene to be regulated by factor.
-1. For each refseq gene in genome, input a distance (for example 100kb), then I get the peak center within 100kb from gene TSS. 
+1. For each refseq gene in genome, input a distance (for example 100kb), then I get the peak center within 100kb from gene TSS.
 2. filter the peaks by p-value < 1e-5 from MACS, and only get top 10,000 peaks if it's more than 10,000
-3. Then calculate a sum of 'Score' for each gene use this formula: 
+3. Then calculate a sum of 'Score' for each gene use this formula:
   Sg = lambda ldx: sum([math.exp(-0.5-4*t) for t in ldx])
 4. output is in bed format. the 5th column is score.
 
