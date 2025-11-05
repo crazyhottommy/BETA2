@@ -115,6 +115,22 @@ beta minus \
   -o output_dir
 ```
 
+### Example with Test Data
+
+Using the included test data for estrogen receptor (ER/ESR1):
+
+```bash
+beta basic \
+  -p BETA_test_data/ER_349_peaks.bed \
+  -e BETA_test_data/ESR1_diff_expr.xls \
+  -k O \
+  --info 1,2,6 \
+  -g hg19 \
+  -n ESR1
+```
+
+**Note**: When using custom format (`-k O`), the `--info` parameter specifies column positions: gene ID, log fold change, and statistical value (e.g., `1,2,6` for columns 1, 2, and 6). See Input Files section below for format details.
+
 ## Input Files
 
 ### ChIP-seq Peaks (required)
@@ -137,7 +153,18 @@ Supported formats:
    TP53          2.5               0.001
    MYC           -1.8              0.01
    ```
-4. **Other** (`-k O`): Specify columns with `--info`
+4. **Other/Custom** (`-k O`): Custom tab-delimited format with `--info` to specify columns
+
+   **IMPORTANT**: The first line must start with `#` to be treated as a header. Without the `#`, BETA will try to parse the header as data and fail.
+
+   Example format (columns 1, 2, 6 contain gene ID, logFC, adj.P.Val):
+   ```
+   #ID              logFC    AveExpr    t           P.Value      adj.P.Val
+   NM_001002231     3.21     9.17       35.33       8.07e-11     4.18e-07
+   NM_005551        2.14     8.45       28.15       1.23e-09     2.34e-06
+   ```
+
+   Then use: `--info 1,2,6` to specify: column 1 (gene ID), column 2 (logFC), column 6 (adj.P.Val)
 
 ### Genome Sequence (for plus mode)
 
