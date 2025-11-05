@@ -11,4 +11,4 @@ __email__ = "wangsu0623@gmail.com"
 
 from beta.utils import setup_logger, Info, error, warn
 
-__all__ = ['__version__', 'setup_logger', 'Info', 'error', 'warn']
+__all__ = ["__version__", "setup_logger", "Info", "error", "warn"]

@@ -52,44 +52,46 @@ from beta.utils import Info, print_elapsed_time
 from beta.core.fileformat_check import checkfileformat
 from beta.core.opt_validator import opt_validate_basic, opt_validate_super, opt_validate_noexpre
 
+
 def basicrun(args):
     start = time.time()
     opts = opt_validate_basic(args)
-    #os.chdir(opts.output)#change the directory to the output directory
-    opts.genomesequence = ''
+    # os.chdir(opts.output)#change the directory to the output directory
+    opts.genomesequence = ""
     check = checkfileformat(opts)
     peakf = check.bed_format()
     opts.peakfile = peakf
-    #print peakf
+    # print peakf
     expre_info = check.check_expr()
-        
+
     g = PScore(opts)
     g.readfile()
     (genepeaks, peaksoutofDistance) = g.ScoreCalc(opts.distance)
     g.Output2File(opts.name)
-    e = expr_combine(opts,expre_info)
+    e = expr_combine(opts, expre_info)
     bgtotal = e.gene_classify()
     e.rank_genes()
     e.ChGS()
-    (selected,counts,geneInfo,nontarget) = e.combine(bgtotal)
-    
-    f = permutation(opts,selected,counts,geneInfo, bgtotal)
-    #counts is thw intersection of binding and expression, total number will be used as a background
+    (selected, counts, geneInfo, nontarget) = e.combine(bgtotal)
+
+    f = permutation(opts, selected, counts, geneInfo, bgtotal)
+    # counts is thw intersection of binding and expression, total number will be used as a background
     f.fdr()
     f.prepare_ouput_basic()
-    m = Motif_Scan(genepeaks,peaksoutofDistance,opts,selected,nontarget)
+    m = Motif_Scan(genepeaks, peaksoutofDistance, opts, selected, nontarget)
     m.get_gene_list()
     m.getpeaks()
     print_elapsed_time(start)
-    
+
+
 def plusrun(args):
     start = time.time()
     opts = opt_validate_super(args)
-    #os.chdir(opts.output)#change the directory to the output directory
+    # os.chdir(opts.output)#change the directory to the output directory
     check = checkfileformat(opts)
     peakf = check.bed_format()
     opts.peakfile = peakf
-    #print peakf
+    # print peakf
     check.check_fasta_dna()
     expre_info = check.check_expr()
 
@@ -97,19 +99,19 @@ def plusrun(args):
     g.readfile()
     (genepeaks, peaksoutofDistance) = g.ScoreCalc(opts.distance)
     g.Output2File(opts.name)
-    e = expr_combine(opts,expre_info)
-    
+    e = expr_combine(opts, expre_info)
+
     bgtotal = e.gene_classify()
     e.rank_genes()
     e.ChGS()
-    (selected,counts,geneInfo,nontarget) = e.combine(bgtotal)
-    
-    f = permutation(opts,selected,counts,geneInfo, bgtotal)
-    #counts is the intersection of binding and expression, total number will be used as a background
+    (selected, counts, geneInfo, nontarget) = e.combine(bgtotal)
+
+    f = permutation(opts, selected, counts, geneInfo, bgtotal)
+    # counts is the intersection of binding and expression, total number will be used as a background
     f.fdr()
     f.prepare_ouput_plus()
-    
-    m = Motif_Scan(genepeaks,peaksoutofDistance,opts,selected,nontarget)
+
+    m = Motif_Scan(genepeaks, peaksoutofDistance, opts, selected, nontarget)
     m.get_gene_list()
     m.getpeaks()
     m.getsequence()
@@ -118,17 +120,18 @@ def plusrun(args):
     m.out2html()
     print_elapsed_time(start)
 
+
 def minusrun(args):
     start = time.time()
     opts = opt_validate_noexpre(args)
-    #os.chdir(opts.output)#change the directory to the output directory
-    opts.genomesequence = ''
+    # os.chdir(opts.output)#change the directory to the output directory
+    opts.genomesequence = ""
     opts.gname2 = False
     check = checkfileformat(opts)
     peakf = check.bed_format()
     opts.peakfile = peakf
-    #print peakf
-        
+    # print peakf
+
     g = PScore(opts)
     g.readfile()
     (genepeaks, peaksoutofDistance) = g.ScoreCalc(opts.distance)

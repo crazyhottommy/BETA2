@@ -1,6 +1,7 @@
 """
 Test core BETA functions
 """
+
 import pytest
 import math
 from beta.core import corelib
@@ -17,7 +18,7 @@ def test_regulatory_potential_function():
     # From pscore.py: Sg = lambda ldx: sum([math.exp(-0.5-4*t) for t in ldx])
     # Test the scoring function logic
     distances = [0.1, 0.2, 0.3]
-    score = sum([math.exp(-0.5 - 4*t) for t in distances])
+    score = sum([math.exp(-0.5 - 4 * t) for t in distances])
 
     # Score should be positive and decrease with distance
     assert score > 0
@@ -26,8 +27,8 @@ def test_regulatory_potential_function():
     close_distances = [0.01]
     far_distances = [0.9]
 
-    close_score = sum([math.exp(-0.5 - 4*t) for t in close_distances])
-    far_score = sum([math.exp(-0.5 - 4*t) for t in far_distances])
+    close_score = sum([math.exp(-0.5 - 4 * t) for t in close_distances])
+    far_score = sum([math.exp(-0.5 - 4 * t) for t in far_distances])
 
     assert close_score > far_score
 
@@ -47,9 +48,9 @@ def test_distance_normalization():
 def test_peak_sorting():
     """Test peak sorting by score"""
     peaks = [
-        ['chr1', '1000', '2000', 'peak1', '50'],
-        ['chr1', '3000', '4000', 'peak2', '100'],
-        ['chr1', '5000', '6000', 'peak3', '75'],
+        ["chr1", "1000", "2000", "peak1", "50"],
+        ["chr1", "3000", "4000", "peak2", "100"],
+        ["chr1", "5000", "6000", "peak3", "75"],
     ]
 
     sorted_peaks = sorted(peaks, key=lambda p: float(p[4]), reverse=True)

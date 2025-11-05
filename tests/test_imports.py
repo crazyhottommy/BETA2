@@ -1,20 +1,23 @@
 """
 Test that all BETA modules can be imported without errors
 """
+
 import pytest
 
 
 def test_import_beta():
     """Test main beta package imports"""
     import beta
-    assert hasattr(beta, '__version__')
+
+    assert hasattr(beta, "__version__")
 
 
 def test_import_cli():
     """Test CLI module imports"""
     from beta import cli
-    assert hasattr(cli, 'main')
-    assert hasattr(cli, 'prepare_argparser')
+
+    assert hasattr(cli, "main")
+    assert hasattr(cli, "prepare_argparser")
 
 
 def test_import_core_modules():
@@ -29,8 +32,8 @@ def test_import_core_modules():
     from beta.core import runbeta
     from beta.core import opt_validator
 
-    assert hasattr(corelib, 'Info')
-    assert hasattr(corelib, 'run_cmd')
+    assert hasattr(corelib, "Info")
+    assert hasattr(corelib, "run_cmd")
 
 
 def test_import_motif_modules():

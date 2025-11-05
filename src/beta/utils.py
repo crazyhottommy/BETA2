@@ -35,10 +35,7 @@ def setup_logger(name: str = "beta", level: int = logging.INFO) -> logging.Logge
     handler.setLevel(level)
 
     # Create formatter
-    formatter = logging.Formatter(
-        '[%(asctime)s] %(levelname)s: %(message)s',
-        datefmt='%H:%M:%S'
-    )
+    formatter = logging.Formatter("[%(asctime)s] %(levelname)s: %(message)s", datefmt="%H:%M:%S")
     handler.setFormatter(formatter)
 
     logger.addHandler(handler)
