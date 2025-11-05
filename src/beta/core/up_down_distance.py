@@ -5,6 +5,7 @@ import re, subprocess
 from optparse import OptionParser
 
 CHROM_CONVERT = {
+    # Convert Roman numeral chromosome names (e.g., from yeast/C. elegans) to numeric format
     "chrI": "chr1",
     "chrII": "chr2",
     "chrIII": "chr3",
@@ -14,7 +15,6 @@ CHROM_CONVERT = {
     "chrVII": "chr7",
     "chrVIII": "chr8",
     "chrIX": "chr9",
-    "chrX": "chr10",
     "chrXI": "chr11",
     "chrXII": "chr12",
     "chrXIII": "chr13",
@@ -27,6 +27,10 @@ CHROM_CONVERT = {
     "chrXX": "chr20",
     "chrXXI": "chr21",
     "chrXXII": "chr22",
+    # Note: chrX is NOT converted to chr10 because:
+    # - For human/mouse (officially supported), chrX is the sex chromosome
+    # - For C. elegans, chrX is also the sex chromosome (not Roman numeral 10)
+    # - Only yeast uses chrX as chromosome 10, which is not officially supported by BETA
     "chrX": "chrX",
     "chrY": "chrY",
     "chrM": "chrM",
