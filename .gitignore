@@ -70,6 +70,8 @@ src/beta/misp/*.o
 *.xls
 *.html
 !src/beta/templates/*.html
+!BETA_test_data/*.bed
+!BETA_test_data/*.xls
 test_output/
 
 # Archives and old versions
@@ -77,4 +79,3 @@ test_output/
 *.tar.gz
 *.tar
 BETA_1.0.7/
-BETA_test_data/

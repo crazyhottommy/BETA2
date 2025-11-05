@@ -20,8 +20,8 @@ class checkfileformat:
         with open(fname) as to_check:
             lines = to_check.readlines()
             first_line,last_line = lines[0],lines[-1]
-            is_5col_bed = lambda a_line:re.search("chr\S+\s\d+\s\d+\s\S+\s\d+[.]*[\d]*",a_line)
-            is_3col_bed = lambda a_line:re.search("chr\S+\s\d+\s\d+$",a_line)
+            is_5col_bed = lambda a_line:re.search(r"chr\S+\s\d+\s\d+\s\S+\s\d+[.]*[\d]*",a_line)
+            is_3col_bed = lambda a_line:re.search(r"chr\S+\s\d+\s\d+$",a_line)
             is_3tab_delimite = lambda a_line:len(a_line.split('\t'))==3
             is_5tab_delimite = lambda a_line:len(a_line.split('\t'))==5
             suffix_5col = lambda a_file: a_file+".5c.bed"
@@ -88,9 +88,9 @@ class checkfileformat:
 
     def check_expr(self):
         "Check the expression file format"
-        is_refseq = lambda string:re.search('[A-Z][A-Z]_\d+(_at)?',string)
-        is_genesymbol = lambda string:re.search('\w+',string)
-        is_value = lambda data:re.search('\"*(\-*)(\d+)\.*(\d*)\"*',data)
+        is_refseq = lambda string:re.search(r'[A-Z][A-Z]_\d+(_at)?',string)
+        is_genesymbol = lambda string:re.search(r'\w+',string)
+        is_value = lambda data:re.search(r'\"*(\-*)(\d+)\.*(\d*)\"*',data)
         expreinfo = self.expreinfo.split(',')
         exprefile = self.exprefile
         expr_info = {}
