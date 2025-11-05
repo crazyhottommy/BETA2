@@ -3,7 +3,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/beta-binding-analysis.svg)](https://pypi.org/project/beta-binding-analysis/)
 [![Python Version](https://img.shields.io/pypi/pyversions/beta-binding-analysis.svg)](https://pypi.org/project/beta-binding-analysis/)
 [![License](https://img.shields.io/badge/license-Artistic%202.0-green)](LICENSE)
-[![PyPI downloads](https://static.pepy.tech/badge/beta-binding-analysis)](https://pepy.tech/project/beta-binding-analysis)
+[![PyPI downloads](https://img.shields.io/pypi/dm/beta-binding-analysis)](https://pypi.org/project/beta-binding-analysis/)
 
 BETA is a computational tool for integrative analysis of ChIP-seq and RNA-seq/microarray data to predict transcription factor (TF) direct target genes and identify whether the TF primarily functions as a transcriptional activator or repressor.
 
