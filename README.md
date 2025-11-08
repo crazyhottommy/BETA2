@@ -145,7 +145,21 @@ chr1    5000    6000
 
 ### Differential Expression (required for basic/plus modes)
 
-Supported formats:
+**Gene ID Format**:
+
+BETA supports two types of gene identifiers in differential expression files:
+
+1. **RefSeq IDs** (default): Use transcript/gene accessions like `NM_001002231`, `NR_045762`, `XM_012345`
+   - This is the default behavior - no additional flag needed
+   - Example: `NM_001002231`, `NR_045762_at`
+
+2. **Official Gene Symbols**: Use gene names like `TP53`, `MYC`, `BRCA1`
+   - Requires the `--gname2` flag
+   - Example command: `beta basic -p peaks.bed -e expression.txt -k LIM --gname2 -g hg38 -n experiment`
+
+**Important**: All genes in your differential expression file must use the SAME identifier type (either all RefSeq IDs or all gene symbols). Do not mix them.
+
+**Supported formats**:
 
 1. **LIMMA** (`-k LIM`): Standard LIMMA output
 2. **Cuffdiff** (`-k CUF`): Cuffdiff gene_exp.diff format
@@ -159,14 +173,21 @@ Supported formats:
 
    **IMPORTANT**: The first line must start with `#` to be treated as a header. Without the `#`, BETA will try to parse the header as data and fail.
 
-   Example format (columns 1, 2, 6 contain gene ID, logFC, adj.P.Val):
+   **Example with RefSeq IDs** (columns 1, 2, 6 contain gene ID, logFC, adj.P.Val):
    ```
    #ID              logFC    AveExpr    t           P.Value      adj.P.Val
    NM_001002231     3.21     9.17       35.33       8.07e-11     4.18e-07
    NM_005551        2.14     8.45       28.15       1.23e-09     2.34e-06
    ```
+   Then use: `--info 1,2,6`
 
-   Then use: `--info 1,2,6` to specify: column 1 (gene ID), column 2 (logFC), column 6 (adj.P.Val)
+   **Example with gene symbols** (same columns, add `--gname2` flag):
+   ```
+   #GeneSymbol      logFC    AveExpr    t           P.Value      adj.P.Val
+   TP53             3.21     9.17       35.33       8.07e-11     4.18e-07
+   MYC              2.14     8.45       28.15       1.23e-09     2.34e-06
+   ```
+   Then use: `--info 1,2,6 --gname2`
 
 ### Genome Sequence (for plus mode)
 
@@ -241,7 +262,7 @@ Assess enrichment of up-regulated vs down-regulated genes among predicted target
 | `--method` | Scoring method (score/distance) |
 | `-c, --cutoff` | P-value cutoff for targets |
 | `--bl` | Use CTCF boundary filtering |
-| `--gname2` | Gene IDs are gene symbols |
+| `--gname2` | Use official gene symbols instead of RefSeq IDs (default: False) |
 
 ## Examples
 
@@ -283,6 +304,20 @@ beta plus \
   -n mouse_TF \
   --mn 20
 ```
+
+### Example 4: Using Gene Symbols Instead of RefSeq IDs
+
+```bash
+beta basic \
+  -p TF_peaks.bed \
+  -e expression_symbols.txt \
+  -k O \
+  --info 1,2,6 \
+  --gname2 \
+  -g hg38 \
+  -n TF_genesymbols
+```
+*(Use `--gname2` when your expression file uses official gene symbols like TP53, MYC, BRCA1 instead of RefSeq IDs)*
 
 ## Migration from BETA 1.x
 
