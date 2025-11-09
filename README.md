@@ -81,6 +81,7 @@ pip install -e .
 Predict TF target genes and function (activator/repressor):
 
 ```bash
+# Note: diff_expr.txt should be TF activation/stimulation vs control (not knockdown)
 beta basic \
   -p peaks.bed \
   -e diff_expr.txt \
@@ -144,6 +145,24 @@ chr1    5000    6000
 ```
 
 ### Differential Expression (required for basic/plus modes)
+
+**Experimental Design - IMPORTANT**:
+
+The differential expression file should represent gene expression changes from **activating/stimulating your transcription factor**:
+
+- **Preferred**: TF activation/overexpression/stimulation vs control
+  - Example: AR activation (androgen treatment) vs vehicle control
+  - Example: ESR1 activation (estrogen treatment) vs vehicle control
+  - Example: TF overexpression vs empty vector control
+
+- **If you only have knockdown/knockout/inhibition data**: You can use it by **flipping the sign of log2FC values**
+  - If you have: TF knockdown vs control
+  - Simply multiply all log2FC values by -1
+  - Example: Gene X has log2FC = -2.5 in knockdown → use log2FC = +2.5 for BETA
+  - Keep p-values and FDR unchanged (only flip the fold change sign)
+  - Biological interpretation: If knocking down the TF decreases a gene's expression, that gene is likely activated by the TF (so activating the TF would increase it)
+
+**Why this matters**: BETA determines whether your TF is an activator or repressor by testing if genes with high binding potential are enriched among upregulated or downregulated genes. This logic requires that you provide the "TF activation" comparison. If your factor is an activator, activating it will increase expression of direct targets (positive logFC). If it's a repressor, activating it will decrease expression of direct targets (negative logFC).
 
 **Gene ID Format**:
 
@@ -269,6 +288,8 @@ Assess enrichment of up-regulated vs down-regulated genes among predicted target
 ### Example 1: Basic TF Analysis (hg38)
 
 ```bash
+# ChIP-seq peaks from ERalpha (ESR1) ChIP-seq
+# Differential expression from estrogen treatment (activating ERalpha) vs vehicle control
 beta basic \
   -p ERalpha_peaks.bed \
   -e ERalpha_treatment_vs_control.txt \
