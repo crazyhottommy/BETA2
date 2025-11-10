@@ -144,6 +144,32 @@ chr1    1000    2000
 chr1    5000    6000
 ```
 
+**Peak Number Cutoff - IMPORTANT**:
+
+By default, BETA only uses the **top 10,000 peaks** even if your BED file contains more peaks. This is controlled by the `--pn` parameter.
+
+**Why this default exists**:
+- Focus on high-confidence peaks (strongest peaks are most likely functional)
+- Reduce computational time
+- Reduce noise from weak/low-confidence binding events
+
+**When to adjust**:
+- **Use default (10,000)**: For most analyses, or if you have noisy ChIP-seq data
+- **Increase the number**: If you have high-quality ChIP-seq with many strong peaks and want comprehensive analysis
+  ```bash
+  beta basic -p peaks.bed -e expr.txt -k LIM -g hg38 -n my_TF --pn 34000
+  ```
+- **Use all peaks**: Set to a very high number to ensure all peaks are included
+  ```bash
+  beta basic -p peaks.bed -e expr.txt -k LIM -g hg38 -n my_TF --pn 100000
+  ```
+- **Decrease**: If you want to focus only on the very strongest binding events
+  ```bash
+  beta basic -p peaks.bed -e expr.txt -k LIM -g hg38 -n my_TF --pn 5000
+  ```
+
+**Example**: If your BED file contains 34,000 peaks but you don't specify `--pn`, only the top 10,000 peaks (by score, if available) will be used in the analysis.
+
 ### Differential Expression (required for basic/plus modes)
 
 **Experimental Design - IMPORTANT**:
