@@ -42,9 +42,13 @@ class permutation:
                 outf = open(downoutput, "w")
                 self.output.append(downoutput)
 
-            outf.write("Chroms\ttxStart\ttxEnd\trefseqID\trank_product\tStrands\tGeneSymbol\treg_potential\tbinding_rank\texpr_rank\tlog2FC\tpadj\n")
+            outf.write(
+                "Chroms\ttxStart\ttxEnd\trefseqID\trank_product\tStrands\tGeneSymbol\treg_potential\tbinding_rank\texpr_rank\tlog2FC\tpadj\n"
+            )
 
-            rank = {}  # {refseqID:[symbol,RP, rank, reg_score, binding_rank, expr_rank, logfc, padj]}
+            rank = (
+                {}
+            )  # {refseqID:[symbol,RP, rank, reg_score, binding_rank, expr_rank, logfc, padj]}
 
             GeneID = []
             if self.gname2 == False:
@@ -90,8 +94,20 @@ class permutation:
                 padj = rank[gene][8]
                 outf.write(
                     "%s\t%s\t%s\t%s\t%.3e\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n"
-                    % (chrom, tss, tts, refseq, float(ob_rp), strand, symbol,
-                       reg_score, binding_rank, expr_rank, logfc, padj)
+                    % (
+                        chrom,
+                        tss,
+                        tts,
+                        refseq,
+                        float(ob_rp),
+                        strand,
+                        symbol,
+                        reg_score,
+                        binding_rank,
+                        expr_rank,
+                        logfc,
+                        padj,
+                    )
                 )
 
             outf.close()

@@ -534,25 +534,37 @@ class expr_combine:
                         logfc = self.downranks[gene][2]
 
                     # data: [refseq, symbol, RP, reg_potential_score, binding_rank, expr_rank, logfc, padj]
-                    data.append([
-                        brank[gene][0],  # refseq
-                        brank[gene][1],  # symbol
-                        RP,              # rank product
-                        gene_score[gene],  # regulatory potential score
-                        brank[gene][2],  # binding rank
-                        erank[gene][2],  # expression rank
-                        logfc,           # log2 fold change
-                        padj             # adjusted p-value
-                    ])
+                    data.append(
+                        [
+                            brank[gene][0],  # refseq
+                            brank[gene][1],  # symbol
+                            RP,  # rank product
+                            gene_score[gene],  # regulatory potential score
+                            brank[gene][2],  # binding rank
+                            erank[gene][2],  # expression rank
+                            logfc,  # log2 fold change
+                            padj,  # adjusted p-value
+                        ]
+                    )
                 data.sort(key=lambda x: x[2])  # sort by RP (index 2)
                 k = 1
                 for n in data:
                     rank = k
                     # Write: refseq, symbol, RP, rank, reg_score, binding_rank, expr_rank, logfc, padj
-                    outf.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % (
-                        n[0], n[1], str(n[2]), str(k),
-                        str(n[3]), str(n[4]), str(n[5]), str(n[6]), str(n[7])
-                    ))
+                    outf.write(
+                        "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n"
+                        % (
+                            n[0],
+                            n[1],
+                            str(n[2]),
+                            str(k),
+                            str(n[3]),
+                            str(n[4]),
+                            str(n[5]),
+                            str(n[6]),
+                            str(n[7]),
+                        )
+                    )
                     k += 1
                 p += 1
         outf.close()
