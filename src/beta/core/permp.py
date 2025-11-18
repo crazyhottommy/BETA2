@@ -42,9 +42,9 @@ class permutation:
                 outf = open(downoutput, "w")
                 self.output.append(downoutput)
 
-            outf.write("Chroms\ttxStart\ttxEnd\trefseqID\trank product\tStrands\tGeneSymbol\n")
+            outf.write("Chroms\ttxStart\ttxEnd\trefseqID\trank_product\tStrands\tGeneSymbol\treg_potential\tbinding_rank\texpr_rank\tlog2FC\tpadj\n")
 
-            rank = {}  # {refseqID:[symbol,RP, rank]}
+            rank = {}  # {refseqID:[symbol,RP, rank, reg_score, binding_rank, expr_rank, logfc, padj]}
 
             GeneID = []
             if self.gname2 == False:
@@ -59,12 +59,18 @@ class permutation:
                     line = line.strip()
 
                     line = line.split("\t")
+                    # Columns: refseq, symbol, RP, rank, reg_score, binding_rank, expr_rank, logfc, padj
                     rank[line[ID_col]] = [
-                        line[0],
-                        line[1],
-                        line[2],
-                        line[3],
-                    ]  # rank = {NM123:[oct4,0.0027,1],NM234:[jun,0.047,2]...}
+                        line[0],  # refseq
+                        line[1],  # symbol
+                        line[2],  # RP
+                        line[3],  # rank
+                        line[4],  # reg_score
+                        line[5],  # binding_rank
+                        line[6],  # expr_rank
+                        line[7],  # logfc
+                        line[8],  # padj
+                    ]
                     GeneID.append(line[ID_col])
 
             for gene in GeneID:
@@ -77,9 +83,15 @@ class permutation:
                 refseq = Infos[3]
                 strand = Infos[5]
                 symbol = Infos[6]
+                reg_score = rank[gene][4]
+                binding_rank = rank[gene][5]
+                expr_rank = rank[gene][6]
+                logfc = rank[gene][7]
+                padj = rank[gene][8]
                 outf.write(
-                    "%s\t%s\t%s\t%s\t%.3e\t%s\t%s\n"
-                    % (chrom, tss, tts, refseq, float(ob_rp), strand, symbol)
+                    "%s\t%s\t%s\t%s\t%.3e\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n"
+                    % (chrom, tss, tts, refseq, float(ob_rp), strand, symbol,
+                       reg_score, binding_rank, expr_rank, logfc, padj)
                 )
 
             outf.close()

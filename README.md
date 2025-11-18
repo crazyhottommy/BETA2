@@ -242,10 +242,60 @@ FASTA format genome sequence file (required for motif analysis)
 
 ### Basic Mode
 
-- `{name}_targets.txt`: Predicted target genes with statistics
-- `{name}_uptarget.txt`: Up-regulated targets
-- `{name}_downtarget.txt`: Down-regulated targets
-- `{name}_function.pdf`: TF function prediction plot
+- `{name}_uptarget.txt`: Up-regulated direct target genes
+- `{name}_downtarget.txt`: Down-regulated direct target genes
+- `{name}_function_prediction.pdf`: TF function prediction plot (activator/repressor)
+- `{name}_function_prediction.R`: R script used to generate the plot
+
+**Target file columns** (`{name}_uptarget.txt` and `{name}_downtarget.txt`):
+
+| Column | Name | Description |
+|--------|------|-------------|
+| 1 | Chroms | Chromosome |
+| 2 | txStart | Transcription start site |
+| 3 | txEnd | Transcription end site |
+| 4 | refseqID | RefSeq transcript ID |
+| 5 | rank_product | Rank product score (lower = more confident target) |
+| 6 | Strands | Strand (+/-) |
+| 7 | GeneSymbol | Gene symbol |
+| 8 | reg_potential | Regulatory potential score (based on nearby binding sites) |
+| 9 | binding_rank | Rank by regulatory potential (1 = highest) |
+| 10 | expr_rank | Rank by differential expression significance (1 = most significant) |
+| 11 | log2FC | Log2 fold change from differential expression |
+| 12 | padj | Adjusted p-value (FDR) from differential expression |
+
+**Recommended cutoff**: Rank product < 0.001 for high-confidence targets.
+
+**Usage tip**: The target files are sorted by rank product (column 5). You can filter by rank product, padj, or both depending on your analysis needs. The additional columns allow you to understand why each gene was ranked as a target and to perform downstream analyses.
+
+**Multiple transcripts per gene**:
+
+When using RefSeq IDs as input (default), you may see the same gene symbol appearing in multiple rows with different RefSeq transcript IDs. This is because:
+- Regulatory potential is calculated for **each transcript individually** based on its TSS position
+- Different transcripts of the same gene can have different TSS positions, resulting in different regulatory potential scores
+- Each transcript is ranked separately
+
+Example output showing multiple transcripts for KLK11:
+```
+chr19  51525486  51531290  NM_001167605  2.019e-06  -  KLK11  0.684  299  1  2.855  1.06e-08
+chr19  51525486  51531290  NM_006853     2.019e-06  -  KLK11  0.684  299  1  2.855  1.06e-08
+chr19  51525486  51530885  NM_144947     2.046e-06  -  KLK11  0.673  303  1  2.855  1.06e-08
+```
+
+**To get one row per gene**, you have two options:
+
+1. **Use gene symbols as input** with the `--gname2` flag:
+   ```bash
+   beta basic -p peaks.bed -e expr_symbols.txt -k LIM --gname2 -g hg38 -n experiment
+   ```
+   This consolidates multiple transcripts by gene symbol, keeping the transcript with the best regulatory potential rank (no averaging).
+
+2. **Post-process the output** to keep only the best-ranked transcript per gene:
+   ```bash
+   # Keep only the first (best) row for each gene symbol
+   head -1 output_uptarget.txt > output_uptarget_unique.txt
+   tail -n +2 output_uptarget.txt | sort -k5,5g | awk '!seen[$7]++' >> output_uptarget_unique.txt
+   ```
 
 ### Plus Mode
 

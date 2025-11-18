@@ -77,20 +77,21 @@ class expr_combine:
                     refseq = refseq[:start]
                 # print line[1]
                 if line[t_column] != "NA":
-                    if float(line[t_column]) > 0:
+                    logfc = float(line[t_column])
+                    if logfc > 0:
                         uptotal += 1
                         self.upgenes.append(
-                            [str(refseq), float(line[fdr_column])]
-                        )  # put all the significantly upregulate genes into a list
-                    if float(line[t_column]) < 0:
+                            [str(refseq), float(line[fdr_column]), logfc]
+                        )  # put all the significantly upregulate genes into a list [refseq, fdr, logfc]
+                    if logfc < 0:
                         downtotal += 1
                         self.downgenes.append(
-                            [str(refseq), float(line[fdr_column])]
-                        )  # put all the significantly downregulate genes into a list
-                    if float(line[t_column]) == 0:
-                        self.nochange.append([str(refseq), float(line[fdr_column])])
+                            [str(refseq), float(line[fdr_column]), logfc]
+                        )  # put all the significantly downregulate genes into a list [refseq, fdr, logfc]
+                    if logfc == 0:
+                        self.nochange.append([str(refseq), float(line[fdr_column]), logfc])
                 else:
-                    self.nochange.append([str(refseq), float(1)])
+                    self.nochange.append([str(refseq), float(1), 0])
 
         total = [uptotal, downtotal]
         print(total)
@@ -137,14 +138,14 @@ class expr_combine:
                     rank += same
                     same = 1
                 minqvalue = qvalue
-                self.upranks[up[i][0]] = [up[i][1], rank]
+                self.upranks[up[i][0]] = [up[i][1], rank, up[i][2]]  # [qvalue, rank, logfc]
                 upout.write(up[i][0] + "\t" + str(up[i][1]) + "\t" + str(rank) + "\n")
                 newc += 1
             else:
-                self.upranks[up[i][0]] = [up[i][1], "NA"]
+                self.upranks[up[i][0]] = [up[i][1], "NA", up[i][2]]  # [qvalue, rank, logfc]
                 upout.write(up[i][0] + "\t" + str(up[i][1]) + "\t" + "NA" + "\n")
         for i in range(c, len(up)):
-            self.upranks[up[i][0]] = [up[i][1], "NA"]
+            self.upranks[up[i][0]] = [up[i][1], "NA", up[i][2]]  # [qvalue, rank, logfc]
             upout.write(up[i][0] + "\t" + str(up[i][1]) + "\t" + "NA" + "\n")
         newd = 0
         minqvalue = down[0][1]
@@ -160,15 +161,15 @@ class expr_combine:
                     rank += same
                     same = 1
                 minqvalue = qvalue
-                self.downranks[down[j][0]] = [down[j][1], rank]
+                self.downranks[down[j][0]] = [down[j][1], rank, down[j][2]]  # [qvalue, rank, logfc]
                 downout.write(down[j][0] + "\t" + str(down[j][1]) + "\t" + str(rank) + "\n")
                 newd += 1
             else:
-                self.downranks[down[j][0]] = [down[j][1], "NA"]
+                self.downranks[down[j][0]] = [down[j][1], "NA", down[j][2]]  # [qvalue, rank, logfc]
                 downout.write(down[j][0] + "\t" + str(down[j][1]) + "\t" + "NA" + "\n")
 
         for j in range(d, len(down)):
-            self.downranks[down[j][0]] = [down[j][1], "NA"]
+            self.downranks[down[j][0]] = [down[j][1], "NA", down[j][2]]  # [qvalue, rank, logfc]
             downout.write(down[j][0] + "\t" + str(down[j][1]) + "\t" + "NA" + "\n")
 
         upout.close()
@@ -418,6 +419,7 @@ class expr_combine:
                 )  # rank from high to low based on the regulatory potential score.
 
                 bindingrank = {}
+                gene_score = {}  # Store regulatory potential score for each gene
                 rank = 1
                 maxscore = bindinggenes[0][-1]
                 for g in bindinggenes:
@@ -425,6 +427,7 @@ class expr_combine:
                     refseq = g[1]
                     symbol = g[2]
                     score = g[-1]
+                    gene_score[ID] = score  # Store score for later use
                     if score == maxscore:
                         rank = rank
                     else:
@@ -522,12 +525,34 @@ class expr_combine:
                     RP = (float(brank[gene][2]) / float(genenumber)) * (
                         float(erank[gene][2]) / float(genenumber)
                     )
-                    data.append([brank[gene][0], brank[gene][1], RP])
-                data.sort(key=lambda x: x[-1])
+                    # Get logfc and padj from upranks or downranks
+                    if gene_type == '"upregulate"':
+                        padj = self.upranks[gene][0]
+                        logfc = self.upranks[gene][2]
+                    else:  # downregulate
+                        padj = self.downranks[gene][0]
+                        logfc = self.downranks[gene][2]
+
+                    # data: [refseq, symbol, RP, reg_potential_score, binding_rank, expr_rank, logfc, padj]
+                    data.append([
+                        brank[gene][0],  # refseq
+                        brank[gene][1],  # symbol
+                        RP,              # rank product
+                        gene_score[gene],  # regulatory potential score
+                        brank[gene][2],  # binding rank
+                        erank[gene][2],  # expression rank
+                        logfc,           # log2 fold change
+                        padj             # adjusted p-value
+                    ])
+                data.sort(key=lambda x: x[2])  # sort by RP (index 2)
                 k = 1
                 for n in data:
                     rank = k
-                    outf.write(n[0] + "\t" + n[1] + "\t" + str(n[2]) + "\t" + str(k) + "\n")
+                    # Write: refseq, symbol, RP, rank, reg_score, binding_rank, expr_rank, logfc, padj
+                    outf.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % (
+                        n[0], n[1], str(n[2]), str(k),
+                        str(n[3]), str(n[4]), str(n[5]), str(n[6]), str(n[7])
+                    ))
                     k += 1
                 p += 1
         outf.close()
