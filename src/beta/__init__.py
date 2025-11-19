@@ -5,7 +5,7 @@ A tool for integrative analysis of ChIP-seq and RNA-seq/microarray data
 to predict transcription factor direct target genes.
 """
 
-__version__ = "2.1.0"
+__version__ = "2.1.1"
 __author__ = "Su Wang, Tommy Tang"
 __email__ = "wangsu0623@gmail.com"
 
