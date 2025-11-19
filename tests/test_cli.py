@@ -6,12 +6,14 @@ import pytest
 import subprocess
 import sys
 
+from beta import __version__
+
 
 def test_beta_version():
     """Test that beta --version works"""
     result = subprocess.run(["beta", "--version"], capture_output=True, text=True)
     assert result.returncode == 0
-    assert "2.0.0" in result.stdout
+    assert __version__ in result.stdout
 
 
 def test_beta_help():
